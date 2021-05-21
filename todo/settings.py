@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost','pankaj1996.herokuapp.com']
 
@@ -177,5 +177,5 @@ STATICFILES_DIRS=[
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# if os.getcwd()=='/app' :
-#     DEBUG =False
+if os.getcwd()=='/app' :
+    DEBUG =False
