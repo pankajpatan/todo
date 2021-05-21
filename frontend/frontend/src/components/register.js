@@ -7,7 +7,7 @@ import axios from 'axios'
 import FormContainer from './FormContainer'
 
 
-function RegisterScreen() {
+function RegisterScreen(props) {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -20,7 +20,7 @@ function RegisterScreen() {
 
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
-            window.location.replace('http://localhost:3000/todo');
+            props.history.push('/');
           } 
     }, [])
 
@@ -44,7 +44,7 @@ function RegisterScreen() {
             if (data.token){
                 localStorage.clear();
               localStorage.setItem('token', data.key);
-              window.location.replace('http://localhost:3000/todo');
+              props.history.push('/');
             }
             else {
                 setName('')

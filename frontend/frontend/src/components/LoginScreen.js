@@ -12,7 +12,7 @@ function LoginScreen(props) {
   
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
-          window.location.replace('http://localhost:3000/todo');
+            props.history.push('/');
         }
       }, []);
 
